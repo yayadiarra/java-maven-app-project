@@ -26,7 +26,7 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    buildImage()
+                    buildImage 'michaelburak/priv-test:jma-2.0'
                 }
             }
         }
