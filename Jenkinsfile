@@ -23,10 +23,12 @@ pipeline {
                 }
             }
         }
-        stage("build image") {
+        stage("build and push image") {
             steps {
                 script {
                     buildImage 'michaelburak/priv-test:jma-2.0'
+                    dockerLogin()
+                    dockerPush 'michaelburak/priv-test:jma-2.0'
                 }
             }
         }
