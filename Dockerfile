@@ -3,4 +3,4 @@ From tomcat:8-jre8
 
 # Maintainer 
 MAINTAINER "yannickparker84@gmail.com"
-COPY ./src/target/*.jar /usr/local/tomcat/webapps
+COPY /home/runner/work/java-maven-app/java-maven-app/target/*.jar /usr/local/tomcat/webapps
