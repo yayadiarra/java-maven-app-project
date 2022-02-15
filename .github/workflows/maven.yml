@@ -8,7 +8,15 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
+env:
+  GKE_PROJECT: My First Project
+  #GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
+  GITHUB_SHA: ${{ github.sha }}
+  GKE_ZONE: us-central1-c
+  GKE_CLUSTER: devopseco
+  IMAGE: randocats
+  REGISTRY_HOSTNAME: us.gcr.io
+  DEPLOYMENT_NAME: randocats
 jobs:
   build:
 
