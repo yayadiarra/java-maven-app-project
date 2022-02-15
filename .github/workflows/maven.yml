@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ main ]
 env:
-  GKE_PROJECT: My First Project
+  GKE_PROJECT: algebraic-pact-317221
   #GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
   GITHUB_SHA: ${{ github.sha }}
   GKE_ZONE: us-central1-c
@@ -61,23 +61,9 @@ jobs:
     - name: Deploy to the dev environment
       uses: steebchen/kubectl@v2.0.0
       with:
-        config: ${{ secrets.KUBECONFIG }}
-  
-  setup-build-publish-deploy:
-    name: Setup, Build, Publish, and Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: Deploy Release on cluster
-      env:
-        GCLOUD_KEY: ${{ secrets.GCLOUD_KEY }}
-      run: |
-        echo "$GCP_SA_KEY"  > ${HOME}/gcloud.json
-        gcloud auth activate-service-account --key-file=${HOME}/gcloud.json
-        gcloud auth configure-docker
-        gcloud container clusters get-credentials \
-        devopseco --zone 
-        us-central1-c --project algebraic-pact-317221
-        # install/upgrade helm chart
-        helm upgrade --install backend ./deploy/helm/backend \
-                  --values ./deploy/helm/backend/env.values.${{ env.CLUSTER_ENV }}.yaml \
-                  --set env_values.image_version=${{ env.RELEASE_VERSION }
+        config: ${{ secrets.KUBECONFIG }} 
+    - uses: google-github-actions/setup-gcloud@v0.2.0
+      with:
+        service_account_key: ${{ secrets.GKE_SA_KEY }}
+        project_id: ${{ secrets.GKE_PROJECT }}
+        export_default_credentials: true
