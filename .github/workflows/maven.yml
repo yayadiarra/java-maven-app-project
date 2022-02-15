@@ -49,8 +49,4 @@ jobs:
         context: .
         push: true
         tags: yannickeboo/lecours:version${{github.run_number}}
-    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-      with:
-        version: '270.0.0'
-        service_account_key: ${{ secrets.GCP_SA_KEY }
- 
+  
