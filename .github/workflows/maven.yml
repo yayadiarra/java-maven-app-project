@@ -45,16 +45,17 @@ jobs:
         push: true
         tags: yannickeboo/lecours:version${{github.run_number}}
   deploy:
-    runs-on: self-hosted
-    needs: [build] # to block for the build step to complete successfully
+    name: Deploy to Kubernetes
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Helm Lint
-      uses: WyriHaximus/github-action-helm3@v2
-      with:
-        exec: helm lint ./helm-chart
-    - name: Helm install
-      uses: WyriHaximus/github-action-helm3@v2
-      with:
-        exec: helm upgrade --install github-magnolia-docker ./helm-chart
-        kubeconfig: '${{ secrets.KUBECONFIG }}'
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Create kubeconfig
+      run: |
+        mkdir ${HOME}/.kube
+        echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > ${HOME}/.kube/config
+        cat ${HOME}/.kube/config
+    - name: Use context
+      run: kubectl config use-context gke_algebraic-pact-317221_us-central1-c_devopseco
+    - name: Deploy to K8s
+      run: kubectl apply -f k8s/
