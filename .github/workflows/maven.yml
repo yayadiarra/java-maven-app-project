@@ -27,6 +27,6 @@ jobs:
     - run: mkdir target1 && cp target/*.jar target1
     - uses: actions/upload-artifact@v2
       with:
-        name: yannick.jar
-        path: target1/yannick.jar
+        name: yannick
+        path: target1
   
