@@ -1,5 +1,5 @@
 # Pull base image 
-FROM tomcat:8-jre8 
+FROM anapsix/alpine-java 
 
 # Maintainer 
 EXPOSE 8080
