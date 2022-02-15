@@ -44,3 +44,22 @@ jobs:
         context: .
         push: true
         tags: yannickeboo/lecours:version${{github.run_number}}
+  deploy:
+    runs-on: self-hosted
+    needs: [build] # to block for the build step to complete successfully
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master # Setup gcloud
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+        # Generate kubeconfig entry
+      - run: gcloud container clusters get-credentials <cluster-name> --zone <zone> --project <project>
+      
+        # Install helm
+      - uses: azure/setup-helm@v1
+        id: install
+
+        # Deploy latest version
+      - run: helm upgrade -f values.yaml --set image.version=${{ github.sha }} example-service example-service
