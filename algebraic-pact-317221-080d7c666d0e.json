@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "algebraic-pact-317221",
+  "private_key_id": "080d7c666d0e3edd2422b0a857317b1c11701291",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCy9Qo4DSyplVCV\nDIj8sMXRL1BywXMEZDYog/wVtPL7ot6yG3qWrJwsz7333JUYeysa+krv8dtAtF8h\nim8vNR9Zx2DsaoobssRt4I0U3hBWwwZd9tZbYf+FO8uLZ++WlFQ53heTzVV86i90\nQekCqqcs26luIVe22YDVjzcKURyRb4Tm7W7wqs77jVXwbj7AgZqPUNlF9S6QsLHZ\n61gmg4WHzNK0dg33upj8NT6l2i4npusi8I15PK6c5iO/3FH4ygwmNuC3tkcIojqL\nDmkI/w+0hV3i4D7eRx+Q/nTE9spn00HayY9d6qrWaLPF8h4R7YfPn1Qy38K10ttY\nRTP7Vb/3AgMBAAECggEARYag5TztFKd/iqC3meC9wfMNYMAahOLADcaVSgOmgS/6\nMB0v59kAxgIhzmnC/SNhEFachZMjuQQ6j2feoWsUloc49zC/Hlq6KOwcM7bAh0y2\nrQvopNEyehtMjYkgUpKnFGJeK5yTMXg0Xoj603/kei+PKEvI7a+b95xv6FCx9ihC\nZy/VC92DOmsc49TeBVnsi40t1hII55nHRHeNeqk3zJDVK7R5VoF00nA2yNVQtFLu\n8Y9LwBl2XDlMokBAKU+qefgCNmxu8Ba7QdzP5Fohiy/lnwc2KNeB7uCmoybQN0Qm\nrxDnFxq6L6aXeddRX6bI7BQlMWQFXWDAMi0VIjar+QKBgQD73YBn2CHW3JUgQ+wO\n74/WEd+b2qkfqRRJH7LdIYSQxb5eJjAN+ycwykuj6TGdX/tKNyaCE30R7ipozWhx\nTV+9NpfzxaKNGucx7cM64spHJ1qO63Fyuh1C8ZKvWKC08iVDxYbD6PfsBzR3FhHa\n87x171EAXEIV6QKpgTk7+ZhwTwKBgQC15SHWrpOBWqdwibKYXA69hcZycEAMajc6\nXoGYvkGY1oAxejvLV44Zmxihsvrn2Df0giKe4aRCbCBZ3xLvG2m1DA9P0PJEQwZ+\nUf7f+YOgQVe0CV3S30TlM0Zp9yH2kmBRWfOhQODbDGMlAnRxE67o76IaX0DFEod+\n4fAZk1Bj2QKBgQDqLeZBJ4U3KLuDV4P50yZyzQWS/Pk5FdVltBJzZsHCdgntsiYG\nKdojlERGMAFQqTiVpbepRAOLE13dOfd9OYrl/AfGwaDFABmso7xdWRbol5+suR8v\no/qnDsPrQ0WRWH/rhpIqP8ecboqKmzuYz/0PzqcK5b0QcClof10+9XCWIwKBgBRu\nHQPg7d5skTv5q16jkGBHI0f9RaRfVb6vmLzQOcvx48oq4YZwWhyUKAsZcEcUKQzE\nhSD1VR7EyElv3c+Pc6sLJLkhTeTO5m7PxOHhQ6B/Vlt5ZdlmjHV18eW7BUyNmlXo\n1Y16HQddd9FTWkLNJCszpzBxHHRGJYPh2rb0reXZAoGBAIj8sHqI59jBzZ/RO0Y1\nzhqWxTraeSH/Zi0G8Qw8fAhQ9q1Hz1zk+2iSy8+XDMjquonkaZ8igK4/u6hU2wnJ\nsbV143dPg9Iy8PLHcVYebs4nFlRMqUhT0IMjyD0n4kpSDrF6WnB3E9dSrC9K6tkJ\ntVguE5ymA3HIR2BMUKYAZLdk\n-----END PRIVATE KEY-----\n",
+  "client_email": "helm-370@algebraic-pact-317221.iam.gserviceaccount.com",
+  "client_id": "109808142830990963198",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/helm-370%40algebraic-pact-317221.iam.gserviceaccount.com"
+}

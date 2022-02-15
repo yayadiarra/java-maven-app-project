@@ -55,7 +55,7 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
 
         # Generate kubeconfig entry
-      - run: gcloud container clusters get-credentials <cluster-name> --zone <zone> --project <project>
+      - run: gcloud container clusters get-credentials devopseco --zone us-central1-c --project algebraic-pact-317221
       
         # Install helm
       - uses: azure/setup-helm@v1
