@@ -45,6 +45,7 @@ jobs:
         push: true
         tags: yannickeboo/lecours:version${{github.run_number}}
   deploy:
+    needs: build
     name: Deploy to Kubernetes
     runs-on: ubuntu-latest
     steps:
