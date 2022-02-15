@@ -5,4 +5,4 @@ From tomcat:8-jre8
 EXPOSE 8080
 LABEL maintainer="yannickparker84@gmail.com"
 COPY target/*.jar /usr/local/tomcat/webapps
-CMD ["catalina.sh", "run"]
+#CMD ["catalina.sh", "run"]
