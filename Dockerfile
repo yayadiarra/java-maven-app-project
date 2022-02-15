@@ -5,4 +5,4 @@ FROM anapsix/alpine-java
 EXPOSE 8080
 LABEL maintainer="yannickparker84@gmail.com"
 COPY target/*jar /usr/local/tomcat/webapps
-CMD ["java", "-jar","/usr/local/tomcat/webapps/*jar"]
+CMD ["java", "-jar","/usr/local/tomcat/webapps/*.jar"]
