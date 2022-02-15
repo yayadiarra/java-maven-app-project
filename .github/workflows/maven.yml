@@ -49,12 +49,8 @@ jobs:
         context: .
         push: true
         tags: yannickeboo/lecours:version${{github.run_number}}
-  deploy:
-    needs: build
-    name: Deploy to Kubernetes
-    runs-on: ubuntu-latest
-    steps:
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         version: '270.0.0'
         service_account_key: ${{ secrets.GCP_SA_KEY }
+ 
