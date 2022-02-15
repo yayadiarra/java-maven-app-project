@@ -48,18 +48,13 @@ jobs:
     runs-on: self-hosted
     needs: [build] # to block for the build step to complete successfully
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master # Setup gcloud
-        with:
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-
-        # Generate kubeconfig entry
-      - run: gcloud container clusters get-credentials devopseco --zone us-central1-c --project algebraic-pact-317221
-      
-        # Install helm
-      - uses: azure/setup-helm@v1
-        id: install
-
-        # Deploy latest version
-      - run: helm upgrade -f values.yaml --set image.version=${{ github.sha }} example-service example-service
+    - uses: actions/checkout@v2
+    - name: Helm Lint
+      uses: WyriHaximus/github-action-helm3@v2
+      with:
+        exec: helm lint ./helm-chart
+    - name: Helm install
+      uses: WyriHaximus/github-action-helm3@v2
+      with:
+        exec: helm upgrade --install github-magnolia-docker ./helm-chart
+        kubeconfig: '${{ secrets.KUBECONFIG }}'
