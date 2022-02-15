@@ -55,3 +55,4 @@ jobs:
       uses: steebchen/kubectl@v2.0.0
       with:
         config: ${{ secrets.KUBECONFIG }}
+        command: kubectl deploy -f test.yml
