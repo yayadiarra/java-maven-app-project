@@ -8,12 +8,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: devopseco    # Add your cluster name here.
-  GKE_ZONE: us-central1-c   # Add your cluster zone here.
-  DEPLOYMENT_NAME: gke-test # Add your deployment name here.
-  IMAGE: static-site
+
 jobs:
   build:
 
@@ -49,4 +44,13 @@ jobs:
         context: .
         push: true
         tags: yannickeboo/lecours:version${{github.run_number}}
-  
+  deploy:
+    name: Deploy to Kubernetes
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Deploy to the dev environment
+      uses: steebchen/kubectl@v2.0.0
+      with:
+        config: ${{ secrets.KUBECONFIG }}
