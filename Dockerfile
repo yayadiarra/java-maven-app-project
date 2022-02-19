@@ -1,7 +1,7 @@
 # Pull base image 
 FROM anapsix/alpine-java 
 
-# Maintainer 
+# Maintainer yaya
 EXPOSE 8080
 LABEL maintainer="yannickparkerS@gmail.com"
 COPY target/*.jar /maven/yannick.jar
