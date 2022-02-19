@@ -20,7 +20,7 @@ env:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -63,4 +63,6 @@ jobs:
       run: |
         cd k8s
         helm upgrade --install $RELEASENAME $CHARTNAME -n $DESIREDNAMESPACE -f anael/values.yaml
+
+        
 
