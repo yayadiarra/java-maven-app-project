@@ -67,9 +67,9 @@ jobs:
         RELEASENAME: anael
 
         CHARTNAME: anael
-        run: |
-          cd k8s
-          helm upgrade --install $RELEASENAME $CHARTNAME -n $DESIREDNAMESPACE -f anael/values.yaml
+      run: |
+        cd k8s
+        helm upgrade --install $RELEASENAME $CHARTNAME -n $DESIREDNAMESPACE -f anael/values.yaml
 
     # Set up KUBE_CONFIG_DATA secret
 #Have your kubeconfig file encrypted
