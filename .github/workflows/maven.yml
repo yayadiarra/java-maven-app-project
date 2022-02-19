@@ -51,7 +51,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: yannickeboo/lecours:version${{github.run_number}}
+        tags: yannickeboo/github
   deploy:
     needs: build
     name: Deploy to Kubernetes
@@ -68,4 +68,8 @@ jobs:
           cd k8s
           helm upgrade --install $RELEASENAME $CHARTNAME -n $DESIREDNAMESPACE -f anael/values.yaml
 
-     
+    # Set up KUBE_CONFIG_DATA secret
+#Have your kubeconfig file encrypted
+
+#cat $HOME/.kube/config | base64
+#Store the encrypted string as a secret with name KUBE_CONFIG_DATA, by navigating to your repo -> Settings -> Secrets -> Add a new secret
