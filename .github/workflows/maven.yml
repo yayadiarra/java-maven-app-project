@@ -63,8 +63,9 @@ jobs:
       uses: wahyd4/kubectl-helm-action@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      run: |
-        cd k8s
-        helm upgrade --install $RELEASENAME $CHARTNAME -n $DESIREDNAMESPACE -f anael/values.yaml
+      with: 
+        args: |
+          cd k8s
+          helm upgrade --install $RELEASENAME $CHARTNAME -n $DESIREDNAMESPACE -f anael/values.yaml
 
      
