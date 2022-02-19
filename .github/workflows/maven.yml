@@ -60,7 +60,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Deploy to the dev environment
-      uses: wahyd4/kubectl-helm-action@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }} 
         DESIREDNAMESPACE: yannick
