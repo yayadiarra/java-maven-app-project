@@ -18,8 +18,8 @@ agent any
     stage ('Docker build and push'){
            steps{
              withDockerRegistry([ credentialsId: "Docker_creds", url: "https://index.docker.io/v1/" ]){
-               sh 'docker build -t veloundou84/java-maven-jenkins . -f Dockerfile'
-               sh 'docker push veloundou84/java-maven-jenkins'
+               sh 'docker build -t Veloundou84/java-maven-jenkins . -f Dockerfile'
+               sh 'docker push Veloundou84/java-maven-jenkins'
              }
            }
     }
