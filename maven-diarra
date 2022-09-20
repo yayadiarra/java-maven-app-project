@@ -1,7 +1,7 @@
 pipeline {
 agent any
   tools {
-    maven 'maven-devops'
+    maven 'maven-stephanie'
   }
   stages {
     stage ('maven clean'){
@@ -13,7 +13,6 @@ agent any
     stage ('maven package') {
       steps{
         sh 'mvn package'
-      }
        withDockerRegistry([ credentialsId: "Docker_creds", url: "https://index.docker.io/v1/" ]){
                sh 'docker build -t yayadiarra/java-maven22' . -f Dockerfile'
                sh 'docker push yayadiarra/java-maven22'
