@@ -9,13 +9,12 @@ agent any
         sh 'mvn clean'
       }
     }
+  }
     stage ('Maven package') {
       steps{
         sh 'mvn package'
       }
     }
-    
-   
     stage ('Docker build and push'){
            steps{
              withDockerRegistry([ credentialsId: "Docker_creds", url: "https://index.docker.io/v1/" ]){
