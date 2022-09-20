@@ -7,7 +7,6 @@ agent any
     stage ('Maven Clean'){
       steps{
         sh 'mvn clean'
-      }
     }
   }
     stage ('Maven package') {
@@ -26,4 +25,4 @@ agent any
     
     
   }
-}
+
