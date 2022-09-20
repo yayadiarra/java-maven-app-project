@@ -17,6 +17,8 @@ agent any
                sh 'docker build -t yayadiarra/java-maven22 . -f Dockerfile'
                sh 'docker push yayadiarra/java-maven22'
              }
-           
+           }
     }
 }
+
+
