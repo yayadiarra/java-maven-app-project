@@ -4,13 +4,13 @@ agent any
     maven 'maven-stephanie'
   }
   stages {
-    stage ('maven clean'){
+    stage ('Maven clean'){
       steps{
         sh 'mvn clean'
         }
       }
     }
-    stage ('maven package') {
+    stage ('Maven package') {
       steps{
         sh 'mvn package'
        withDockerRegistry([ credentialsId: "Docker_creds", url: "https://index.docker.io/v1/" ]){
