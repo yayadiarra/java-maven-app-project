@@ -1,7 +1,7 @@
 pipeline {
 agent any
   tools {
-    maven "maven-stephanie"
+    maven "maven-diarra"
   }
   stages {
     stage ('Maven Clean'){
@@ -9,6 +9,7 @@ agent any
         sh 'mvn clean'
       }
     }
+  }
        withDockerRegistry([ credentialsId: "Docker_creds", url: "https://index.docker.io/v1/" ]){
                sh 'docker build -t devopstrainingschool/java-maven-jenkins . -f Dockerfile'
                sh 'docker push devopstrainingschool/java-maven-jenkins'
