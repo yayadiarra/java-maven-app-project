@@ -1,15 +1,19 @@
 pipeline {
 agent any
   tools {
-    maven "maven-diarra"
+    maven 'maven-diarra'
   }
   stages {
-    stage ('Maven Clean'){
+    stage ('maven clean'){
       steps{
         sh 'mvn clean'
+        }
       }
     }
-  }
+    stage ('maven package') {
+      steps{
+        sh 'mvn package'
+      }
        withDockerRegistry([ credentialsId: "Docker_creds", url: "https://index.docker.io/v1/" ]){
                sh 'docker build -t devopstrainingschool/java-maven-jenkins . -f Dockerfile'
                sh 'docker push devopstrainingschool/java-maven-jenkins'
