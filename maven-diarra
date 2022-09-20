@@ -1,7 +1,7 @@
 pipeline {
 agent any
   tools {
-    maven "maven-stephanie"
+    maven "maven-diarra"
   }
   stages {
     stage ('Maven Clean'){
