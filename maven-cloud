@@ -17,8 +17,8 @@ agent any
     stage ('Docker build and push'){
            steps{
              withDockerRegistry([ credentialsId: "maven-creds", url: "https://index.docker.io/v1/"]){
-               sh 'docker build -t yayadiarra/maven-african . -f Dockerfile'
-               sh 'docker push yayadiarra/maven-african'
+               sh 'docker build -t yayadiarra/maven-africa . -f Dockerfile'
+               sh 'docker push yayadiarra/maven-africa'
              }
            }
     }
