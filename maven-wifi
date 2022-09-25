@@ -36,15 +36,6 @@ agent any
         }
       }
     }   
-    
-    stage ('Docker build and push'){
-           steps{
-             withDockerRegistry([ credentialsId: "maven-creds", url: "https://index.docker.io/v1/"]){
-               sh 'docker build -t yayadiarra/wifi . -f Dockerfile'
-               sh 'docker push yayadiarra/wifi'
-             }
-           }
-    }
-    
+ 
    }
   }
