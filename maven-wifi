@@ -39,9 +39,9 @@ agent any
     
     stage ('Docker build and push'){
            steps{
-             withDockerRegistry([ credentialsId: "maven-creds", url: "https://index.docker.io/v1/"]){
-               sh 'docker build -t yayadiarra/maven-ice . -f Dockerfile'
-               sh 'docker push yayadiarra/maven-ice'
+             withDockerRegistry([ credentialsId: "sonarqube", url: "https://index.docker.io/v1/"]){
+               sh 'docker build -t yayadiarra/maven-wifi . -f Dockerfile'
+               sh 'docker push yayadiarra/maven-wifi'
              }
            }
     }
