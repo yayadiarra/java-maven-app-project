@@ -14,7 +14,7 @@ agent any
         sh 'mvn package'
       }
     }
-    stage ('Sonarqube analysis and testing'){
+    stage ('Sonarqube analysis and tesing'){
       steps{
         script{
           withSonarQubeEnv('sonarqube'){
@@ -40,8 +40,8 @@ agent any
     stage ('Docker build and push'){
            steps{
              withDockerRegistry([ credentialsId: "sonarqube", url: "https://index.docker.io/v1/"]){
-               sh 'docker build -t yayadiarra/maven-wifi . -f Dockerfile'
-               sh 'docker push yayadiarra/maven-wifi'
+               sh 'docker build -t yayadiarra/maven-africa . -f Dockerfile'
+               sh 'docker push yayadiarra/maven-africa'
              }
            }
     }
