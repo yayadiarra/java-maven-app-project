@@ -9,6 +9,7 @@ agent any
         sh 'mvn clean'
     }
   }
+ }
     stage ('Maven package') {
       steps{
         sh 'mvn package'
@@ -21,6 +22,6 @@ agent any
                sh 'docker push yayadiarra/wifi'
              }
            }
-         }
+         
     }
 }
