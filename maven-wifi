@@ -21,4 +21,6 @@ agent any
                sh 'docker push yayadiarra/wifi'
              }
            }
+         }
     }
+}
